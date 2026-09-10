@@ -1,7 +1,8 @@
 package com.KBPRASAC.TaskBoard.workspace.repository;
 
 import com.KBPRASAC.TaskBoard.workspace.entity.Workspace;
-import org.springframework.data.jpa.repository.JpaRepository;
+import com.corebackend.repository.BaseRepository;
 
-public interface WorkspaceRepository extends JpaRepository<Workspace, Long> {
+public interface WorkspaceRepository
+        extends BaseRepository<Workspace> {
 }

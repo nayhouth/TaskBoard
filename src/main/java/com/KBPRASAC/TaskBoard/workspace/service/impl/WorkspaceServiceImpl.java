@@ -1,55 +1,40 @@
 package com.KBPRASAC.TaskBoard.workspace.service.impl;
 
 import com.KBPRASAC.TaskBoard.workspace.entity.Workspace;
+import com.KBPRASAC.TaskBoard.workspace.entity.WorkspaceMember;
+import com.KBPRASAC.TaskBoard.workspace.entity.WorkspaceRole;
+import com.KBPRASAC.TaskBoard.workspace.repository.WorkspaceMemberRepository;
 import com.KBPRASAC.TaskBoard.workspace.repository.WorkspaceRepository;
+import com.KBPRASAC.TaskBoard.workspace.service.WorkspaceMemberService;
 import com.KBPRASAC.TaskBoard.workspace.service.WorkspaceService;
+import com.corebackend.service.impl.BaseServiceImpl;
 import org.springframework.stereotype.Service;
 
-import java.util.List;
-
 @Service
-public class WorkspaceServiceImpl implements WorkspaceService {
+public class WorkspaceServiceImpl
+        extends BaseServiceImpl<Workspace>
+        implements WorkspaceService {
 
-    private final WorkspaceRepository workspaceRepository;
+    private final WorkspaceMemberService workspaceMemberService;
 
     public WorkspaceServiceImpl(
-            WorkspaceRepository workspaceRepository) {
-        this.workspaceRepository = workspaceRepository;
+            WorkspaceRepository workspaceRepository,
+            WorkspaceMemberService workspaceMemberService) {
+
+        super(workspaceRepository);
+        this.workspaceMemberService = workspaceMemberService;
     }
 
     @Override
-    public List<Workspace> getAll() {
-        return workspaceRepository.findAll();
-    }
+    protected void postCreate(Workspace workspace) {
 
-    @Override
-    public Workspace getById(Long id) {
-        return workspaceRepository.findById(id)
-                .orElseThrow(() ->
-                        new RuntimeException(
-                                "Workspace not found: " + id
-                        ));
-    }
+        WorkspaceMember ownerMember = new WorkspaceMember();
 
-    @Override
-    public Workspace create(Workspace workspace) {
-        return workspaceRepository.save(workspace);
-    }
+        ownerMember.setWorkspace(workspace);
+        ownerMember.setUser(workspace.getOwner());
+        ownerMember.setRole(WorkspaceRole.OWNER);
 
-    @Override
-    public Workspace update(Long id, Workspace workspace) {
-        Workspace existing = getById(id);
+        workspaceMemberService.create(ownerMember);
 
-        existing.setName(workspace.getName());
-        existing.setDescription(workspace.getDescription());
-        existing.setActive(workspace.getActive());
-
-        return workspaceRepository.save(existing);
-    }
-
-    @Override
-    public void delete(Long id) {
-        Workspace existing = getById(id);
-        workspaceRepository.delete(existing);
     }
 }

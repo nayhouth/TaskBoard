@@ -1,17 +1,12 @@
 package com.KBPRASAC.TaskBoard.workspace.entity;
 
 import com.KBPRASAC.TaskBoard.user.entity.User;
+import com.corebackend.entity.BaseEntity;
 import jakarta.persistence.*;
-
-import java.time.LocalDateTime;
 
 @Entity
 @Table(name = "workspace")
-public class Workspace {
-
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long id;
+public class Workspace extends BaseEntity {
 
     @Column(nullable = false, length = 200)
     private String name;
@@ -25,15 +20,6 @@ public class Workspace {
 
     @Column(nullable = false, length = 1)
     private String active = "Y";
-
-    @Column(nullable = false, updatable = false)
-    private LocalDateTime createdAt;
-
-    private LocalDateTime updatedAt;
-
-    public Long getId() {
-        return id;
-    }
 
     public String getName() {
         return name;
@@ -65,24 +51,5 @@ public class Workspace {
 
     public void setActive(String active) {
         this.active = active;
-    }
-
-    public LocalDateTime getCreatedAt() {
-        return createdAt;
-    }
-
-    public LocalDateTime getUpdatedAt() {
-        return updatedAt;
-    }
-
-    @PrePersist
-    protected void onCreate() {
-        createdAt = LocalDateTime.now();
-        updatedAt = LocalDateTime.now();
-    }
-
-    @PreUpdate
-    protected void onUpdate() {
-        updatedAt = LocalDateTime.now();
     }
 }
