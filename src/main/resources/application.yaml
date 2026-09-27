@@ -11,3 +11,12 @@ spring:
     hibernate:
       ddl-auto: update
     show-sql: true
+
+core:
+  auth:
+    jwt:
+      secret: taskboard-v1-development-secret-key-2026
+
+logging:
+  level:
+    org.springframework.security: DEBUG
