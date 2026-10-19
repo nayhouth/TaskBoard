@@ -1,6 +1,6 @@
 package com.KBPRASAC.TaskBoard.department.entity;
 
-import com.corebackend.entity.BaseEntity;
+import com.corebackend.common.entity.BaseEntity;
 import jakarta.persistence.Entity;
 import jakarta.persistence.Table;
 

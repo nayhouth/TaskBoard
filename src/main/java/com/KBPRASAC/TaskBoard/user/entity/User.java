@@ -2,7 +2,7 @@ package com.KBPRASAC.TaskBoard.user.entity;
 
 import com.KBPRASAC.TaskBoard.unit.entity.Unit;
 import com.corebackend.auth.entity.AuthUser;
-import com.corebackend.entity.BaseEntity;
+import com.corebackend.common.entity.BaseEntity;
 import jakarta.persistence.Entity;
 import jakarta.persistence.JoinColumn;
 import jakarta.persistence.ManyToOne;

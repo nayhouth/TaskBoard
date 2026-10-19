@@ -2,7 +2,7 @@ package com.KBPRASAC.TaskBoard.unit.controller;
 
 import com.KBPRASAC.TaskBoard.unit.entity.Unit;
 import com.KBPRASAC.TaskBoard.unit.service.UnitService;
-import com.corebackend.controller.BaseController;
+import com.corebackend.common.controller.BaseController;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
