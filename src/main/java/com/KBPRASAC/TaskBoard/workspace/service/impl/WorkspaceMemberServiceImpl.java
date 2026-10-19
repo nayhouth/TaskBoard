@@ -3,7 +3,7 @@ package com.KBPRASAC.TaskBoard.workspace.service.impl;
 import com.KBPRASAC.TaskBoard.workspace.entity.WorkspaceMember;
 import com.KBPRASAC.TaskBoard.workspace.repository.WorkspaceMemberRepository;
 import com.KBPRASAC.TaskBoard.workspace.service.WorkspaceMemberService;
-import com.corebackend.service.impl.BaseServiceImpl;
+import com.corebackend.common.service.impl.BaseServiceImpl;
 import org.springframework.stereotype.Service;
 
 import java.util.List;

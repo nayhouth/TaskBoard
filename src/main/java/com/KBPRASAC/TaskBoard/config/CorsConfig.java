@@ -1,6 +1,6 @@
 package com.KBPRASAC.TaskBoard.config;
 
-import com.corebackend.service.CoreSysConfigService;
+import com.corebackend.sysconfig.service.CoreSysConfigService;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.web.servlet.config.annotation.CorsRegistry;
