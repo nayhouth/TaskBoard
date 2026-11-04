@@ -1,7 +1,7 @@
 package com.KBPRASAC.TaskBoard.unit.entity;
 
 import com.KBPRASAC.TaskBoard.department.entity.Department;
-import com.corebackend.entity.BaseEntity;
+import com.corebackend.common.entity.BaseEntity;
 import jakarta.persistence.Entity;
 import jakarta.persistence.JoinColumn;
 import jakarta.persistence.ManyToOne;

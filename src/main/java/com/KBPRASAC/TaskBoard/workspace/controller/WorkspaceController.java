@@ -2,7 +2,7 @@ package com.KBPRASAC.TaskBoard.workspace.controller;
 
 import com.KBPRASAC.TaskBoard.workspace.entity.Workspace;
 import com.KBPRASAC.TaskBoard.workspace.service.WorkspaceService;
-import com.corebackend.controller.BaseController;
+import com.corebackend.common.controller.BaseController;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 

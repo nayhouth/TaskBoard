@@ -1,7 +1,7 @@
 package com.KBPRASAC.TaskBoard.workspace.entity;
 
 import com.KBPRASAC.TaskBoard.user.entity.User;
-import com.corebackend.entity.BaseEntity;
+import com.corebackend.common.entity.BaseEntity;
 import jakarta.persistence.*;
 
 @Entity

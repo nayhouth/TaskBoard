@@ -1,7 +1,7 @@
 package com.KBPRASAC.TaskBoard.workspace.service;
 
 import com.KBPRASAC.TaskBoard.workspace.entity.WorkspaceMember;
-import com.corebackend.service.BaseService;
+import com.corebackend.common.service.BaseService;
 
 import java.util.List;
 

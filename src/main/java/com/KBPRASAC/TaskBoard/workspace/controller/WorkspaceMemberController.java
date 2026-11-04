@@ -2,7 +2,7 @@ package com.KBPRASAC.TaskBoard.workspace.controller;
 
 import com.KBPRASAC.TaskBoard.workspace.entity.WorkspaceMember;
 import com.KBPRASAC.TaskBoard.workspace.service.WorkspaceMemberService;
-import com.corebackend.controller.BaseController;
+import com.corebackend.common.controller.BaseController;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;

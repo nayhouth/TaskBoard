@@ -11,11 +11,13 @@ import org.springframework.data.jpa.repository.config.EnableJpaRepositories;
 })
 @EntityScan(basePackages = {
 		"com.KBPRASAC.TaskBoard",
-		"com.corebackend.entity"
+		"com.corebackend.common.entity",
+		"com.corebackend.sysconfig.entity"
 })
 @EnableJpaRepositories(basePackages = {
 		"com.KBPRASAC.TaskBoard",
-		"com.corebackend.repository"
+		"com.corebackend.common.repository",
+		"com.corebackend.sysconfig.repository"
 })
 public class TaskBoardApplication {
 
